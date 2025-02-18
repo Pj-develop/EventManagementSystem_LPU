@@ -1,7 +1,7 @@
 /* eslint-disable no-empty */
 import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
+import api from '../api'
 
 export default function RegisterPage() {
   const [name, setName] = useState("");
@@ -19,7 +19,7 @@ export default function RegisterPage() {
     }
 
     try {
-      await axios.post("/register", {
+      await api.post("/register", {
         name,
         email,
         password,

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api";
 import { UserContext } from "../UserContext";
 
 export default function LoginPage() {
@@ -25,7 +25,7 @@ export default function LoginPage() {
     ev.preventDefault();
 
     try {
-      const { data } = await axios.post("/login", { email, password });
+      const { data } = await api.post("/login", { email, password });
       setUser(data);
       alert("Login success");
 

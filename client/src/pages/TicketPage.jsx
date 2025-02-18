@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { IoMdArrowBack } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useContext, useEffect, useState } from "react";
-import axios from "axios";
+import api from '../api';
 import { UserContext } from "../UserContext";
 
 export default function TicketPage() {
@@ -17,7 +17,7 @@ export default function TicketPage() {
   });
 
   const fetchTickets = async () => {
-    axios
+    api
       .get(`/tickets/user/${user._id}`)
       .then((response) => {
         setUserTickets(response.data);
@@ -29,7 +29,7 @@ export default function TicketPage() {
 
   const deleteTicket = async (ticketId) => {
     try {
-      await axios.delete(`/tickets/${ticketId}`);
+      await api.delete(`/tickets/${ticketId}`);
 
       fetchTickets();
       alert("Ticket Deleted");

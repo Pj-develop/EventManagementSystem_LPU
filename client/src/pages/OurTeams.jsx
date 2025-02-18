@@ -1,5 +1,8 @@
 //import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+// Team member component
+import PropTypes from 'prop-types';
+
 const OurTeam = () => {
   return (
     <section className="secondary">
@@ -50,7 +53,8 @@ const OurTeam = () => {
   );
 };
 
-// Team member component
+
+
 const TeamMember = ({ imgSrc, name, role, description }) => {
   return (
     <div className="items-center bg-gray-50 rounded-lg shadow sm:flex ">
@@ -95,4 +99,13 @@ const TeamMember = ({ imgSrc, name, role, description }) => {
   );
 };
 
+TeamMember.propTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
+
 export default OurTeam;
+
+

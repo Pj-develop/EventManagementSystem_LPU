@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: ["https://api.provertos.site", "https://www.provertos.site", "https://provertos.site"],
   })
 );
 
@@ -43,6 +43,7 @@ app.get("/test", (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
+  console.log("Registering user");
   const { name, email, password } = req.body;
 
   try {
@@ -58,6 +59,7 @@ app.post("/register", async (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
+  console.log("Logging in user");
   const { email, password } = req.body;
 
   const userDoc = await UserModel.findOne({ email });

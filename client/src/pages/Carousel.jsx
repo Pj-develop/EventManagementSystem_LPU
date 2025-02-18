@@ -1,6 +1,10 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import PropTypes from 'prop-types';
+import sponsor2 from '../assets/sponsor2.jpg';
+import sponsorship1 from '../assets/sponsorship1.jpg';
+import events from '../assets/events.jpg';
 
 function SimpleCarousel() {
   const settings = {
@@ -53,6 +57,12 @@ function SimpleCarousel() {
     );
   }
 
+  SampleNextArrow.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    onClick: PropTypes.func,
+  };
+
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -64,26 +74,32 @@ function SimpleCarousel() {
     );
   }
 
+  SamplePrevArrow.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    onClick: PropTypes.func,
+  };
+
   return (
     <div className="block m-10">
       <Slider {...settings}>
         <div>
           <img
-            src="../src/assets/sponsor2.jpg"
+            src={sponsor2}
             alt="slide1"
             className="w-full max-h-200 object-cover rounded-md transition-transform duration-300 transform hover:scale-110"
           />
         </div>
         <div>
           <img
-            src="../src/assets/sponsorship1.jpg"
+            src={sponsorship1}
             alt="slide2"
             className="w-full max-h-200 object-cover rounded-md transition-transform duration-300 transform hover:scale-110"
           />
         </div>
         <div>
           <img
-            src="../src/assets/events.jpg"
+            src={events}
             alt="slide3"
             className="w-full max-h-200 object-cover rounded-md transition-transform duration-300 transform hover:scale-110"
           />

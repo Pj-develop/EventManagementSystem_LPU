@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../api';
 import { useEffect, useState } from 'react';
 import { IoMdArrowBack } from "react-icons/io";
 import { Link, useParams } from 'react-router-dom';
@@ -12,7 +12,7 @@ export default function OrderSummary() {
       if(!id){
         return;
       }
-      axios.get(`/event/${id}/ordersummary`).then(response => {
+      api.get(`/event/${id}/ordersummary`).then(response => {
         setEvent(response.data)
       }).catch((error) => {
         console.error("Error fetching events:", error);

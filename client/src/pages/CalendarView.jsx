@@ -1,5 +1,5 @@
 // import React from 'react'
-import axios from "axios";
+import api from "../api";
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, addMonths } from "date-fns";
 import { useEffect, useState } from "react";
 import { BsCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
@@ -13,7 +13,7 @@ export default function CalendarView() {
 //! Fetch events from the server -------------------------------------------------------
   useEffect(() => {
     
-    axios.get("/events").then((response) => {
+    api.get("/events").then((response) => {
       setEvents(response.data);
     }).catch((error) => {
       console.error("Error fetching events:", error);
