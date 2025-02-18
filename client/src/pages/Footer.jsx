@@ -13,7 +13,7 @@ function Footer() {
                 alt="Pro-verots Logo"
               /> */}
               <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">
-                Pro-vertos Management System
+                Pro-vertos 
               </span>
             </a>
           </div>
@@ -80,7 +80,7 @@ function Footer() {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2024{" "}
+            © 2025{" "}
             <a href="https://flowbite.com/" className="hover:underline">
               Pro-vertos Management System
             </a>
