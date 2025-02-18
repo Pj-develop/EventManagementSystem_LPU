@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://api.proverstos.site'
+  baseURL: 'https://api.provertos.site'
 });
 
 export default api;
