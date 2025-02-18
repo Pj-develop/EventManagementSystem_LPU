@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../UserContext";
 import { RxExit } from "react-icons/rx";
 import { BsFillCaretDownFill } from "react-icons/bs";
-
+import logo from '../assets/logo2.png';
 const scrollToBottom = () => {
   window.scrollTo({
     top: document.documentElement.scrollHeight,
@@ -65,7 +65,7 @@ export default function Header() {
     <div>
       <header className="flex py-2 px-6 sm:px-6 justify-between place-items-center">
         <Link to={"/"} className="flex item-center ">
-          <img src="../src/assets/logo2.png" alt="" className="w-40 h-15" />
+          <img src={logo} alt="" className="w-40 h-15" />
         </Link>
         <div className="flex bg-white rounded py-2.5 px-4 w-1/3 gap-4 items-center shadow-md shadow-gray-200">
           <button>
